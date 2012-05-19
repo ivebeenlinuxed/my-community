@@ -1,5 +1,5 @@
 <?php
-class RunnableTest extends Selenium2TestCase {
+class RunnableTest extends BaseTestcase {
 	public static $browsers = array(
       array(
         'name'    => 'Firefox',
@@ -15,15 +15,13 @@ class RunnableTest extends Selenium2TestCase {
         'timeout' => 30000
       ));
 	
-	protected $coverageScriptUrl = "/var/www/Selenium2PHPUnit/logs/";
-	protected $coverageDomain = "http://s2.ipv6.bcslichfield.com/";
 	
 	
 	public function test_RunnableTest() {
 		//require_once "htdocs/index.php";
 		//unused();
 		$this->assertEquals(true, true);
-		$this->get("http://s2.ipv6.bcslichfield.com/");
+		$this->get(\Core\Router::$settings['site']['address']);
 		sleep(10);
 	}
 }
