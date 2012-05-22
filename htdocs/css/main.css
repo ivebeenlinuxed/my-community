@@ -1,0 +1,242 @@
+@CHARSET "UTF-8";
+
+/*
+Theme Name: BCS Lichfield
+Theme URI: http://www.bcslichfield.com/
+Description: First test theme.
+Author: Will Tinsdeall
+Version: 0.1
+License: All Rights Reserved
+*/
+
+
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #eee;
+}
+
+body > div#body {
+	width: 980px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+/*
+header {
+	height: 150px;
+	background: url(../images/header.jpg) repeat-x top left;
+	line-height: 150px;
+}
+
+header img {
+	display: block;
+	padding-top: 25px;
+}
+*/
+
+div#bar {
+	/*background: url(../images/blue_bar.jpg) repeat-x top left;*/
+	height: 40px;
+}
+
+div#rotator {
+	background: url(../images/rotator_bg.jpg) repeat-x top left;
+	height: 200px;
+	border-bottom: 1px solid #9999dd;
+}
+
+div#rotator_overlay {
+	width: 690px;
+	margin-left: 280px;
+	float: right;
+	background: rgba(255, 255, 255, 0.7);
+	height: 190px;
+	padding: 5px;
+	z-index: 200;
+	position: absolute;
+}
+
+div#rotator_overlay h2 {
+	margin: 0;
+	padding: 5px 0 5px 0;
+	font-size: 20px;
+}
+
+div#rotator_overlay div.content {
+	overflow: hidden;
+	height: 115px;
+	margin-bottom: 15px;
+}
+
+div#rotator_overlay div.footer {
+	font-size: 12px;
+}
+
+div.widget-container {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin: 5px;
+	width: 315px;
+	/*display: inline-block;*/
+	float: left;
+	background-color: #ededed;
+	font-size: 12px;
+	/* height: 274px; */
+}
+
+div.widget-container h3 {
+	background: url(../images/module_top.jpg) repeat-x top left;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0;
+	padding: 0 0 0 5px;
+}
+
+div.widget-container div.bcs_wsh {
+	background-color: #d9d9d9;
+}
+
+div.widget-container ul {
+	font-size: 14px;
+	margin: 5px 0 5px 0;
+}
+
+
+ul.thumblist {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.thumblist > li {
+	height: 68px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	padding: 0 5px 0 5px;
+	font-size: 13px;
+}
+
+ul.thumblist > li > img {
+	float: left;
+	width: 90px;
+	height: 63px;
+	padding-right: 5px;
+}
+
+ul.thumblist.square > li > img {
+	float: left;
+	width: 63px;
+	height: 63px;
+	padding-right: 5px;
+}
+
+
+
+ul.thumblist > li > h4 {
+	margin: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+ul.thumblist > li > div {
+	margin-left: 95px;
+	font-size: 12px;
+}
+
+ul.thumblist.square > li > div {
+	margin-left: 68px;
+}
+
+ul.extralist {
+	padding-left: 5px;
+	font-size: 10px;
+}
+
+ul.extralist > li {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+ul.thumblist span {
+	display: block;
+}
+
+ul.thumblist a.read, a.read-more {
+	display: block;
+	text-align: right;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+a.read-more:after {
+	content: "»";
+}
+
+.list-hidden {
+	display: none;
+}
+
+ul.thumbboard {
+	padding: 0;
+	margin: 0 0 20px 0;
+	list-style: none;
+}
+
+ul.thumbboard > li {
+	display: inline-block;
+}
+
+ul.thumbboard > li > a {
+	border: 0;
+}
+
+.widget-title .right-link {
+	float: right;
+	margin-right: 10px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#ajax_wrapper {
+	padding: 10px;
+}
+
+#ajax_container {
+	padding: 0 0 10px 0;
+}
+
+.clear {
+	clear: both;
+}
+
+h5 {
+	font-size: 12px;
+	margin: 0 0 2px 0;
+}
+
+#venue_list span, #group_list span {
+	height: 33px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#event_list span {
+	height: 20px;
+}
+
+.modal {
+	display: none;
+}
+
+#footer {
+	clear: both;
+	padding: 20px 0 30px 0;
+	text-align: center;
+	font-size: 10px;
+	color: grey;
+}

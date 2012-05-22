@@ -1,0 +1,168 @@
+@CHARSET "UTF-8";
+
+#group_banner_outer {
+	background-color: #eee;
+}
+
+#group_banner {
+	height: 390px;
+	color: white;
+	width: 980px;
+	margin: 10px auto;
+}
+
+@media (min-width: 10px) {
+		#group_banner {
+			width: auto !important;
+			max-width: 980px;
+		}
+}
+
+#group_banner h2 {
+	margin: 0;
+	text-align: right;
+	padding: 320px 10px 0 0;
+	font-size: 30px;
+	color: white;
+}
+
+#group_banner .tagline {
+	text-align: right;
+	font-size: 18px;
+	font-style: italic;
+	padding: 0 10px 0 0;
+}
+
+#group_profile_image {
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+#group_profile_image_edit {
+	border-radius: 5px;
+	float: left;
+	margin: 0 10px 5px 0;
+}
+
+#group_profile_image_edit div {
+	width: 190px;
+	height: 100px;
+	padding: 100px 0 0 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+#group_overview h2 {
+	margin: 0;
+	padding: 5px 0 5px 0;
+}
+
+#group_left {
+	float: left;
+	width: 200px;
+}
+
+#group_overview {
+	border: 1px solid #ddd;
+	background-color: #eee;
+	padding: 5px;
+}
+
+#group_main_nav {
+	display: block;
+	border-top: #ddd solid 1px;
+	border-left: #ddd solid 1px;
+	border-right: #ddd solid 1px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 0 5px 5px 0;
+}
+#group_main_nav li {
+	margin: 0;
+	border-bottom: #ddd solid 1px;
+	background-color: #eee;
+}
+
+#group_main_nav li a {
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 10px;
+}
+
+#group_main_nav li a:hover {
+	background-color: #ddd;
+}
+
+#group_fader {
+	margin: 15px 0 0 220px;
+}
+#group_news_widget, #group_activity_widget {
+	width: auto !important;
+	float: none !important;
+	margin: 5px 0 0 430px;
+}
+#group_news_widget h4 {
+	white-space: normal;
+}
+
+#group_news_widget li {
+	height: auto;
+}
+	
+#group_news_widget span {
+	height: auto;
+}
+
+#group_left .btn {
+	margin-top: 10px;
+}
+
+#group_youtube_widget {
+	width: 410px;
+	float: left;
+	margin-top: 0;
+}
+
+#group_youtube_widget > div {
+	margin: 10px 5px 10px 5px;
+}
+
+#group_input_name, #group_input_description {
+	display: block;
+	width: 720px;
+}
+
+#group_input_description {
+	height: 150px;
+}
+
+#group_edit_save {
+	float: right;
+	clear: both;
+}
+
+#name_subline {
+	margin: 0;
+}
+
+#group_name {
+	line-height: 25px;
+	padding-top: 16px;
+}
+
+#group_banner_upload {
+	margin: 150px 0 0 350px;
+	width: 230px;
+	height: 80px;
+	padding: 30px 0 0 30px;
+	position: absolute;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.edit-hidden {
+	display: none;
+}
