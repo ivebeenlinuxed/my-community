@@ -14,10 +14,11 @@ Testing and building
 
 Building is done through ant. To build you will need Apache Ant (apt-get install ant or follow these instructions http://ant.apache.org/manual/install.html)
 
-1) Type "ant" to create a config.php file for the install
-2) To add tables to a clean database execute "ant db-schema"
-3) To add test data to the database run "ant db-testdata"
+1) Type "ant" to create a config.php file for the install (you will need to edit this)
 
+2) To add tables to a clean database execute "ant db-schema"
+
+3) To add test data to the database run "ant db-testdata"
 
 ###Extra Tools
 
