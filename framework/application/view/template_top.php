@@ -89,10 +89,10 @@ if (!isset($banner)) {
 								<li><a href='/groups'>Groups</a></li>
 								<li><a href="/places">Places</a></li>
 							</ul>
-							<!-- ul class="nav pull-right">
+							<ul class="nav pull-right">
 								<li class="twitter social-but"><a href="#"><span>Twitter</span></a></li>
 								<li class="facebook social-but"><a href="#"><span>Facebook</span></a></li>
-							</ul-->
+							</ul>
 							<form class="navbar-search pull-right">
 								<input type="text" class="search-query" placeholder="Search">
 							</form>

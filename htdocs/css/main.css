@@ -22,6 +22,23 @@ body > div#body {
 	background-color: white;
 }
 
+div.navbar li.social-but a {
+	display: block;
+	width: 32px;
+	height: 32px;
+	padding: 3px 1px;
+}
+div.navbar a span {
+	display: none;
+	visibility: hidden;
+}
+div.navbar li.twitter a {
+	background: transparent url('/images/twitter-32x32.png') no-repeat center center;
+}
+div.navbar li.facebook a {
+	background: transparent url('/images/facebook-32x32.png') no-repeat center center;
+}
+
 div#rotator {
 	background: url(../images/rotator_bg.jpg) repeat-x top left;
 	height: 200px;
