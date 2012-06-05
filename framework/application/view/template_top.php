@@ -71,13 +71,9 @@ if (!isset($banner)) {
 	
 </head>
 <body>
-	<div id="body">
-		<!-- 
+	<div id="body" class="container">
 		<header>
 			<img src="/images/logo.png" alt="Logo" />
-		</header>
-		 -->
-		 <header>
 		 <div class="navbar">
 			<div class="navbar-inner">
 				<div class="container">
