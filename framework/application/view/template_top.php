@@ -74,28 +74,29 @@ if (!isset($banner)) {
 	<div id="body" class="container">
 		<header>
 			<img src="/images/logo.png" alt="Logo" />
-		 <div class="navbar">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</a>
-      				<a class="brand" href="/">My Community</a>
-					<div class="nav-collapse">
-						<ul class="nav">
-							<li<?php if ($_SERVER["REQUEST_URI"] == "/") {echo " class='active'";} ?>><a href='/'>Home</a></li>
-							<li><a href='/about'>About</a></li>
-							<li><a href='#'>Donate</a></li>
-						</ul>
-				    	<form class="navbar-search pull-left">
-							<input type="text" class="search-query" placeholder="Search">
-						</form>
-					</div>
-			    </div>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li<?php if ($_SERVER["REQUEST_URI"] == "/") {echo " class='active'";} ?>><a href='/'>Home</a></li>
+								<li><a href='/events'>Events</a></li>
+								<li><a href='/groups'>Groups</a></li>
+								<li><a href="/places">Places</a></li>
+							</ul>
+					    	<form class="navbar-search pull-right">
+								<input type="text" class="search-query" placeholder="Search">
+							</form>
+						</div>
+				    </div>
+				</div>
 			</div>
-		</div>
-		 </header>
+		</header>
+		
 		<div id="bar"></div>
 		<div id="ajax_container">
