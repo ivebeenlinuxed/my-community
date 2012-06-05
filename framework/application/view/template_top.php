@@ -25,14 +25,6 @@ if (!isset($banner)) {
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC74oP0zrh5SvDWO0ycBeg8dmGsmOlQDdg&sensor=true">
     </script>-->
     
-    <!-- Stylesheets -->
-	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/css/detail.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/css/home.css" media="all" />
-	
-	<!-- JavaScript -->
-	<script type="text/javascript" src="/js/details.js"></script>
-	
 	<!-- Twitter Bootstrap -->
 	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 	
@@ -68,6 +60,14 @@ if (!isset($banner)) {
 	
 	<script type="text/javascript" src="/js/jquery_ui_loader.js"></script>
 	
+    <!-- Stylesheets -->
+	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/css/detail.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/home.css" media="all" />
+	
+	<!-- JavaScript -->
+	<script type="text/javascript" src="/js/details.js"></script>
+	
 	
 </head>
 <body>
@@ -89,7 +89,11 @@ if (!isset($banner)) {
 								<li><a href='/groups'>Groups</a></li>
 								<li><a href="/places">Places</a></li>
 							</ul>
-					    	<form class="navbar-search pull-right">
+							<!-- ul class="nav pull-right">
+								<li class="twitter social-but"><a href="#"><span>Twitter</span></a></li>
+								<li class="facebook social-but"><a href="#"><span>Facebook</span></a></li>
+							</ul-->
+							<form class="navbar-search pull-right">
 								<input type="text" class="search-query" placeholder="Search">
 							</form>
 						</div>

@@ -22,24 +22,6 @@ body > div#body {
 	background-color: white;
 }
 
-/*
-header {
-	height: 150px;
-	background: url(../images/header.jpg) repeat-x top left;
-	line-height: 150px;
-}
-
-header img {
-	display: block;
-	padding-top: 25px;
-}
-*/
-
-div#bar {
-	/*background: url(../images/blue_bar.jpg) repeat-x top left;*/
-	height: 40px;
-}
-
 div#rotator {
 	background: url(../images/rotator_bg.jpg) repeat-x top left;
 	height: 200px;
