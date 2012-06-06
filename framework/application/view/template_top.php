@@ -102,4 +102,3 @@ if (!isset($banner)) {
 			</div>
 		</header>
 		
-		<div id="ajax_container">
