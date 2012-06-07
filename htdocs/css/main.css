@@ -17,8 +17,6 @@ body {
 }
 
 body > div#body {
-	width: 980px;
-	margin: 0 auto;
 	background-color: white;
 }
 
@@ -238,4 +236,8 @@ h5 {
 	text-align: center;
 	font-size: 10px;
 	color: grey;
+}
+
+table caption {
+	text-align: left;
 }
