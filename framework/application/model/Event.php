@@ -5,6 +5,7 @@ class Event extends DBObject {
 	public static function getTable($read=true) {return "event";}
 	public static function getPrimaryKey() {return "id";}
 	public static function getToday() {
+		//FIXME Need to get events for just today
 		return self::getAll();
 	}
 	

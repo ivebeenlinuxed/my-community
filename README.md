@@ -20,6 +20,12 @@ Building is done through ant. To build you will need Apache Ant (apt-get install
 
 3) To add test data to the database run "ant db-testdata"
 
+###Our build server
+* Build server: server2.bcslichfield.com:8080 (Jenkins)
+* Bug tracker: Mantis http://playground.bcslichfield.com/mantis (links with Eclipse via mylyn http://marketplace.eclipse.org/content/mylyn-mantis-connector, links with Jenkins). I don't like the UI, but as it integrates with the Eclipse TODO stuff I can't complain... Just using it as an API
+* Git Project: https://github.com/ivebeenlinuxed/my-community
+* Auto update build: http://mycommunity.bcslichfield.com (this is automatically updated with every commit by Jenkins. Jenkins checks every 15 minutes...)
+
 ###Extra Tools
 
 You may also consider using the following to help test. If you do not have these installed you will not

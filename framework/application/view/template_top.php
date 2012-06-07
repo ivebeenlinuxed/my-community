@@ -94,8 +94,9 @@ if (!isset($banner)) {
 								<li class="facebook social-but"><a href="#"><span>Facebook</span></a></li>
 							</ul>
 							<form class="navbar-search pull-right">
-								<input type="text" class="search-query" placeholder="Search">
+								<input type="text" class="search-query" placeholder="Search" />
 							</form>
+							</div>
 						</div>
 				    </div>
 				</div>
