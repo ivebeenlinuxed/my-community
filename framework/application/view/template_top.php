@@ -96,11 +96,9 @@ if (!isset($banner)) {
 							<form class="navbar-search pull-right">
 								<input type="text" class="search-query" placeholder="Search" />
 							</form>
-							</div>
 						</div>
-				    </div>
-				</div>
+					</div>
+			    </div>
 			</div>
 		</header>
 		
-		<div id="ajax_container">
