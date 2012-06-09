@@ -35,7 +35,6 @@ if (!isset($banner)) {
 	<script type="text/javascript" src="/js/bootstrap.js"></script>
 	<?php if ($banner) { ?>
 	<!-- Banner -->
-	<script type="text/javascript" src="/js/banner.js"></script>
 	<script type="text/javascript" src="/js/easing.js"></script>
 	<script type="text/javascript">
 	var banner_data = "/banner";
@@ -68,7 +67,8 @@ if (!isset($banner)) {
 	<!-- JavaScript -->
 	<script type="text/javascript" src="/js/details.js"></script>
 	
-	
+	<script type="text/javascript" src="/js/jquery.pjax.js"></script>
+	<script type="text/javascript" src="/js/pjax-strap.js"></script>
 </head>
 <body>
 	<div id="body" class="container">

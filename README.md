@@ -1,4 +1,4 @@
-My Community
+My Community [![Build Status](http://server2.bcslichfield.com:8080/job/My%20Community/badge/icon)](http://server2.bcslichfield.com:8080/job/My%20Community/)
 ============
 
 A community site designed to store activities in the local area
