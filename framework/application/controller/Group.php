@@ -1,10 +1,11 @@
 <?php
 namespace Controller;
 
-class Group {
+class Group extends BaseController {
 	public function index($id=null, $action="view") {
 		if ($id == null || !\Model\Group::Exists($id)) {
-			header("Location: /");
+			$this->indexed();
+			return;
 		}
 		
 		\Core\Router::loadView("template_top", array("banner"=>false));
@@ -12,5 +13,11 @@ class Group {
 		\Core\Router::loadView("detail/modals");
 		\Core\Router::loadView("template_bottom");
 		
+	}
+	
+	public function indexed() {
+		$this->getTemplateTop();
+		echo "INDEX PAGE FOR Group";
+		$this->getTemplateBottom();
 	}
 }

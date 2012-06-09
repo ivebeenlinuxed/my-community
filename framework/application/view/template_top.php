@@ -85,9 +85,9 @@ if (!isset($banner)) {
 						<div class="nav-collapse">
 							<ul class="nav">
 								<li<?php if ($_SERVER["REQUEST_URI"] == "/") {echo " class='active'";} ?>><a href='/'>Home</a></li>
-								<li><a href='/events'>Events</a></li>
-								<li><a href='/groups'>Groups</a></li>
-								<li><a href="/places">Places</a></li>
+								<li><a href='/event'>Events</a></li>
+								<li><a href='/group'>Groups</a></li>
+								<li><a href="/place">Places</a></li>
 							</ul>
 							<ul class="nav pull-right">
 								<li class="twitter social-but"><a href="#"><span>Twitter</span></a></li>

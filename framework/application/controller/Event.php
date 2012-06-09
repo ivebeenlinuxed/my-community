@@ -1,10 +1,20 @@
 <?php
+/**
+ * 
+ * @package Controller
+ * @author ivebeenlinuxed <will@bcslichfield.com>
+ * @link
+ * @category
+ * @license 
+ *
+ */
 namespace Controller;
 
-class Event {
+class Event extends BaseController {
 	public function index($id=null, $action="view") {
 		if ($id == null || !\Model\Event::Exists($id)) {
-			header("Location: /");
+			$this->indexed();
+			return;
 		}
 		
 		\Core\Router::loadView("template_top", array("banner"=>false));
@@ -12,5 +22,11 @@ class Event {
 		\Core\Router::loadView("detail/modals");
 		\Core\Router::loadView("template_bottom");
 		
+	}
+	
+	public function indexed() {
+		$this->getTemplateTop();
+		echo "INDEX PAGE FOR Event";
+		$this->getTemplateBottom();
 	}
 }
