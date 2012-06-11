@@ -15,9 +15,11 @@ class Home extends BaseController {
 	
 	public function event_table() {
 		$page = $_GET['page']? (int)$_GET['page'] : 0;
-		$table = new \Library\Widget\EventTable(\Model\Event::getAll());
+		$table = new \Library\Widget\DataTable(\Model\Event::getAll());
 		$table->paginationLink = "/home?action=event_table&page=";
 		$table->page = $page;
+		$table->addColumn("date", "Date and Time", array("\Library\CellRenderer", "iCalFrequency"));
+		$table->addColumn("title", "Title", array("\Library\CellRenderer", "EventDescription"));
 		$table->Render();
 	}
 }

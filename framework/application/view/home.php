@@ -3,7 +3,7 @@
 				<div id="events" class="section">
 					<h2>Events</h2>
 					<?php
-						$controller->event_table(0);
+						$controller->event_table();
 					?>
 					
 				</div>

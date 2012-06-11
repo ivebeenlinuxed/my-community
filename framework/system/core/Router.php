@@ -84,6 +84,9 @@ abstract class Router {
 		foreach ($variables as $key=>$data) {
 			$$key = $data;
 		}
+		if (isset($variables['data'])) {
+			$data = $variables['data'];
+		}
 		include BOILER_LOCATION."application/view/$view.php";
 	}
 
