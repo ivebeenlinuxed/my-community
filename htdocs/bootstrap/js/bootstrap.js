@@ -1564,7 +1564,7 @@
 
 
  /* TYPEAHEAD PUBLIC CLASS DEFINITION
-  * ================================= */
+  * ================================= 
 
   var Typeahead = function (element, options) {
     this.$element = $(element)
@@ -1788,7 +1788,7 @@
 
 
   /* TYPEAHEAD PLUGIN DEFINITION
-   * =========================== */
+   * =========================== 
 
   $.fn.typeahead = function (option) {
     return this.each(function () {
@@ -1811,7 +1811,7 @@
 
 
  /* TYPEAHEAD DATA-API
-  * ================== */
+  * ================== 
 
   $(function () {
     $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {
@@ -1821,5 +1821,7 @@
       $this.typeahead($this.data())
     })
   })
-
+*/
 }(window.jQuery);
+  
+  

@@ -241,3 +241,15 @@ h5 {
 table caption {
 	text-align: left;
 }
+
+.navbar-search {
+	margin: 0 auto;
+	float: none;
+	padding: 6px 0 0 0;
+	width: 320px;
+}
+
+.navbar-search > input {
+	width: 300px;
+}
+}

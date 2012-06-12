@@ -26,7 +26,7 @@ if (!isset($banner)) {
     </script>-->
     
 	<!-- Twitter Bootstrap -->
-	<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.min.css" media="all" />
@@ -83,7 +83,7 @@ if (!isset($banner)) {
 							<span class="icon-bar"></span>
 						</a>
 						<div class="nav-collapse">
-							<ul class="nav">
+							<ul class="nav pull-left">
 								<li<?php if ($_SERVER["REQUEST_URI"] == "/") {echo " class='active'";} ?>><a href='/'>Home</a></li>
 								<li><a href='/event'>Events</a></li>
 								<li><a href='/group'>Groups</a></li>
@@ -93,7 +93,7 @@ if (!isset($banner)) {
 								<li class="twitter social-but"><a href="#"><span>Twitter</span></a></li>
 								<li class="facebook social-but"><a href="#"><span>Facebook</span></a></li>
 							</ul>
-							<form class="navbar-search pull-right">
+							<form class="navbar-search">
 								<input type="text" class="search-query" placeholder="Search" />
 							</form>
 						</div>
