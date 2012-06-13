@@ -1,4 +1,18 @@
 <?php
+/**
+ * This is a library for all the DataTable cell renderers. This probably should be done in a better way at some point.
+ * 
+ * PHP Version: 5.3
+ * 
+ * @category Library
+ * @package  My-Community
+ * @author   ivebeenlinuxed <will@bcslichfield.com>
+ * @license  All Rights Reserved
+ * @version  GIT: $Id$
+ * @link     http://www.bcslichfield.com/
+ * 
+ */
+
 namespace Library;
 
 class CellRenderer {

@@ -2,7 +2,7 @@ MultiSectionTypeahead = function(el) {
 	this.el = $(el);
 	this.asyncCaller = "/search";
 	this.el.get(0).typeahead = this;
-	this.dropdown = $("<ul class='typeahead dropdown-menu'><li class='nav-header'>Title</li><li><a href='#'>Item</a></li></ul>").css("display", "none");
+	this.dropdown = $("<ul class='typeahead dropdown-menu'></ul>").css("display", "none");
 	this.onFocus = function() {
 		position = this.el.offset();
 		this.dropdown.css("top", this.el.outerHeight()+position.top).css("left", position.left).css("width", this.el.outerWidth()).css("display", "block");
