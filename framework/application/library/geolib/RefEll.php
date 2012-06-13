@@ -49,8 +49,9 @@ namespace Library\GeoLib;
    * The second character can be any uppercase character from A through Z
    * excluding I.
    *
-   * @param ref
-   * @return
+   * @param $ref Grid Reference to convert
+   * 
+   * @return \Library\GeoLib\OSRef
    * @since 2.1
    */
   function getOSRefFromSixFigureReference($ref) {
@@ -79,8 +80,8 @@ namespace Library\GeoLib;
   /**
    *  Work out the UTM latitude zone from the latitude
    *
-   * @param latitude
-   * @return
+   * @param $latitude Latitude of the zone
+   * @return string
    */
   function getUTMLatitudeZoneLetter($latitude) {
     if ((84 >= $latitude) && ($latitude >= 72)) return "X";

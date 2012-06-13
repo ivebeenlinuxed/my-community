@@ -2,8 +2,12 @@
 namespace Model;
 
 class Group extends DBObject {
-	public static function getTable($read=true) {return "group";}
-	public static function getPrimaryKey() {return "id";}
+	public static function getTable($read=true) {
+		return "group";
+	}
+	public static function getPrimaryKey() {
+		return "id";
+	}
 
 	public function __construct($Id) {
 		parent::__construct($Id);

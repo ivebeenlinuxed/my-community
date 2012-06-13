@@ -1,16 +1,38 @@
 <?php
 /**
+ * Event Controller
  * 
- * @package Controller
- * @author ivebeenlinuxed <will@bcslichfield.com>
- * @link
- * @category
- * @license 
- *
+ * PHP Version: 5.3
+ * 
+ * @category Controller
+ * @package  My-Community
+ * @author   ivebeenlinuxed <will@bcslichfield.com>
+ * @license  All Rights Reserved
+ * @version  GIT: $Id$
+ * @link     http://www.bcslichfield.com/
+ * 
  */
 namespace Controller;
 
+/**
+ * Displays event related pages
+ * 
+ * @category Controller
+ * @package  My-Community
+ * @author   ivebeenlinuxed <will@bcslichfield.com>
+ * @license  All Rights Reserved
+ * @link     http://www.bcslichfield.com/
+ *
+ */
 class Event extends BaseController {
+	/**
+	 * Displays either an index page or the details page of events
+	 * 
+	 * @param int    $id     ID of the event to display
+	 * @param string $action Page mode
+	 * 
+	 * @return null
+	 */
 	public function index($id=null, $action="view") {
 		if ($id == null || !\Model\Event::Exists($id)) {
 			$this->indexed();
@@ -24,7 +46,12 @@ class Event extends BaseController {
 		
 	}
 	
-	public function indexed() {
+	/**
+	 * Get the index page
+	 * 
+	 * @return null
+	 */
+	private function indexed() {
 		$this->getTemplateTop();
 		echo "INDEX PAGE FOR Event";
 		$this->getTemplateBottom();

@@ -34,12 +34,12 @@
  * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    PHPUnit_Selenium
- * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @copyright  2010-2012 Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License
- * @link       http://www.phpunit.de/
- * @since      File available since Release 1.0.0
+ * @package   PHPUnit_Selenium
+ * @author    Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright 2010-2012 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @link      http://www.phpunit.de/
+ * @since     File available since Release 1.0.0
  */
 
 if (isset(\Core\Router::$settings['test']['enabled']) && \Core\Router::$settings['test']['enabled'] == true && isset($_COOKIE['PHPUNIT_SELENIUM_TEST_ID']) &&
@@ -63,7 +63,7 @@ if (isset(\Core\Router::$settings['test']['enabled']) && \Core\Router::$settings
     }
 
     file_put_contents(
-      $name = $file . '.' . md5(uniqid(rand(), TRUE)) . '.' . $_COOKIE['PHPUNIT_SELENIUM_TEST_ID'],
-      serialize($data)
+      	$name = $file . '.' . md5(uniqid(rand(), true)) . '.' . $_COOKIE['PHPUNIT_SELENIUM_TEST_ID'],
+      	serialize($data)
     );
 }

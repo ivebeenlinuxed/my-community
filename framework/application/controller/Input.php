@@ -79,7 +79,9 @@ class Input {
 			unset($v->northing);
 			try {
 				\Model\Venue::Create(\System\Library\StdLib::makeArray($v));
-			} catch (\Library\Database\DBException $e) {}
+			} catch (\Library\Database\DBException $e) {
+				
+			}
 		}
 		
 		foreach ($organisation as $o) {
@@ -118,7 +120,9 @@ class Input {
 			
 			try {
 				\Model\Event::Create(\System\Library\StdLib::makeArray($a));
-			} catch (\Library\Database\DBException $e) {}
+			} catch (\Library\Database\DBException $e) {
+				
+			}
 		}
 		
 	}

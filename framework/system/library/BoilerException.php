@@ -1,3 +1,5 @@
 <?php
 namespace Library;
-class BoilerException extends Exception {}
+class BoilerException extends Exception {
+	
+}
