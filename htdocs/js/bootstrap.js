@@ -24,5 +24,6 @@ $(document).ready(function() {
 		content: "Make sure you have saved all changes on this page before starting work on editing a new activity. Changes will be lost otherwise!"
 	});
 	
-	//$(".modal").modal({});
+	
+	m  = new MultiSectionTypeahead('#main-search');
 });

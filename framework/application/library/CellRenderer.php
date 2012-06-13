@@ -7,6 +7,6 @@ class CellRenderer {
 	}
 	
 	public static function EventDescription($data, $col) {
-		return '<a href="/event/'.$o->id.'">'.(($data->title == "") ? substr($data->description, 0, 50).'</a>...' : $data->title).'</a>';
+		return '<a href="/event/'.$data->id.'">'.(($data->title == "") ? substr($data->description, 0, 50).'</a>...' : $data->title).'</a>';
 	}
 }

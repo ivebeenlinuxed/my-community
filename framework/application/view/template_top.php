@@ -69,6 +69,7 @@ if (!isset($banner)) {
 	
 	<script type="text/javascript" src="/js/jquery.pjax.js"></script>
 	<script type="text/javascript" src="/js/pjax-strap.js"></script>
+	<script type="text/javascript" src="/js/MultiSectionTypeahead.js"></script>
 </head>
 <body>
 	<div id="body" class="container">
@@ -94,7 +95,7 @@ if (!isset($banner)) {
 								<li class="facebook social-but"><a href="#"><span>Facebook</span></a></li>
 							</ul>
 							<form class="navbar-search">
-								<input type="text" class="search-query" placeholder="Search" />
+								<input type="text" class="search-query" id="main-search" placeholder="Search" />
 							</form>
 						</div>
 					</div>

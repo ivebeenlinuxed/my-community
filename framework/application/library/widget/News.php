@@ -6,7 +6,7 @@ class News extends PageWidget {
 	
 	/**
 	 * 
-	 * @param array $articles
+	 * @param array  $articles
 	 * @param string $rss
 	 */
 	public function __construct($articles, $rss) {

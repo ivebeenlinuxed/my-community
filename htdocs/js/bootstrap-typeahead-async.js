@@ -92,17 +92,17 @@
 
   , process: function (items) {
       var that = this
-
+      /*
       items = $.grep(items, function (item) {
         return that.matcher(item)
       })
 
       items = this.sorter(items)
-
+*/
       if (!items.length) {
         return this.shown ? this.hide() : this
       }
-
+      
       return this.render(items.slice(0, this.options.items)).show()
     }
 
