@@ -33,7 +33,7 @@
 	</table>
 	<?php 
 	for ($i = 0; $i<$pagination->getPages(); $i++) {
-		echo "<a href='{$controller->paginationLink}$i' data-pjax-replace data-pjax='#$id'>".($i+1)."</a>";
+		echo "<a href='{$controller->paginationLink}$i' data-pjax-replace data-pjax='#{$controller->id}'>".($i+1)."</a>";
 		if ($i != $pagination->getPages()-1) {
 			echo "&nbsp;|&nbsp;";
 		}
