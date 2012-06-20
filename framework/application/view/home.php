@@ -55,6 +55,10 @@
 				</div>
 				
 				<div class="calendar"></div>
+				
+				<div class="facebook"></div>
+				
+				<div class="twitter"></div>
 			</div>
 
 		</div>
