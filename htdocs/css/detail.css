@@ -187,3 +187,8 @@
 #organisations .org p a {
 	display: inline;
 }
+
+/* Calendar widget, home page */
+#sidebar .calendar .ui-datepicker {
+	margin: 0 auto;
+}

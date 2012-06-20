@@ -46,6 +46,15 @@
 			
 			<div id="sidebar" class="span4">
 				<h2>Sidebar</h2>
+				<form class="form-search">
+					<input type="text" class="input-medium search-query span3" placeholder="Enter your postcode for events near you">
+					<button type="submit" class="btn">Search</button>
+				</form>
+				<div class="class" style="height:370px">
+					<p>MAP HERE PLEASE, showing pins for each of the events listed in the table to the left</p>
+				</div>
+				
+				<div class="calendar"></div>
 			</div>
 
 		</div>
