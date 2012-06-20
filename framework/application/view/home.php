@@ -2,6 +2,10 @@
 			<article class="span8">
 				<div id="events" class="section">
 					<h2>Upcoming Events</h2>
+					<form class="form-search">
+						<input type="text" class="input-medium search-query span7" placeholder="Search for events near you e.g. dancing near CW8 2AB">
+						<button type="submit" class="btn">Search</button>
+					</form>
 					<?php
 						$controller->event_table();
 					?>
