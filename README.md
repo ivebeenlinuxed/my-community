@@ -1,59 +1,76 @@
-My Community [![Build Status](http://server2.bcslichfield.com:8080/job/My%20Community/badge/icon)](http://server2.bcslichfield.com:8080/job/My%20Community/)
+My Community
 ============
 
-A community site designed to store activities in the local area
-
-Scrapers
---------
-
-Todo: Document schema and explain scraperwiki
+Please read README_TECHNICAL.md for developer information on building and testing the project
 
 
-Testing and building
---------------------
+Welcome to My Community, an open source project allowing councils and other groups
+to provide a portal to activities within the local area. Our aim is to engage all
+groups, both community and council, by providing a central point of reference for
+anything else in the area.
 
-Building is done through ant. To build you will need Apache Ant (apt-get install ant or follow these instructions http://ant.apache.org/manual/install.html)
+This project is currently being run in conjunction with Cheshire Age UK.
 
-1) Type "ant" to create a config.php file for the install (you will need to edit this)
 
-2) To add tables to a clean database execute "ant db-schema"
+Goals
+-----
 
-3) To add test data to the database run "ant db-testdata"
+Out of this project we are looking to setup a fully searchable portal of micro-sites
+for each group, with support for each of these groups to brand their page as they see
+fit. We will be providing functionality to enable groups to register a domain name
+with their page, and also to be able to customise it with their own pictures, and
+select the widgets that they wish to display, and the position they wish to display
+them.
 
-###Our build server
-* Build server: server2.bcslichfield.com:8080 (Jenkins)
-* Bug tracker: Mantis http://playground.bcslichfield.com/mantis (links with Eclipse via mylyn http://marketplace.eclipse.org/content/mylyn-mantis-connector, links with Jenkins). I don't like the UI, but as it integrates with the Eclipse TODO stuff I can't complain... Just using it as an API
-* Git Project: https://github.com/ivebeenlinuxed/my-community
-* Auto update build: http://mycommunity.bcslichfield.com (this is automatically updated with every commit by Jenkins. Jenkins checks every 15 minutes...)
+The tool will be useable by all age demographics and should be simple for those not
+used to using technology. This type of development will mean that at times ease of
+use will be prioritised over functionality.
 
-###Extra Tools
 
-You may also consider using the following to help test. If you do not have these installed you will not
-be able to use the command "ant test" to run automated tests.
+How the system is designed
+--------------------------
 
-These tools test the stability of the build (installed through PHP Pear)
+We have designed the system to work with a basis of three main entities:
 
-* PHP Mess Detector 
+* Venues - A place where things occur
+* Groups - A collection of people organising activities
+* Events - A link between a venue and a group, encorporating a time element
 
-pear channel-discover pear.phpmd.org 
-pear channel-discover pear.pdepend.org 
-pear install --alldeps phpmd/PHP_PMD
- 
-* PHP CodeSniffer
+The strategy is to build the project around these three core elements. While other
+entities may be created in the future, such as "people", these core entities will
+form the basis of the core functionality.
 
-pear install PHP_CodeSniffer
 
-* PHP Copy and Paste detector
+How you can help
+----------------
 
-pear channel-discover components.ez.no
-pear install phpunit/phpcpd
+###Tell us when something is wrong
 
-* PHPUnit
+Although this is a technical project, you do not have to be technical to get involved.
+If you notice an issue, for example a link does not work, please it for us to review.
+You may be thinking this is difficult, but actually all you have to do is three things:
 
-pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony-project.com
-pear install phpunit/PHPUnit
+1. Register with GitHub
+2. Click "Issues" at the top of this project page, then "Report an Issue"
+3. Explain in your own words how you came across the issue so that we can repeat
+the instructions to work out where it is going wrong
 
-* PHPUnit skelgen
+###Donate to the project
 
-pear install phpunit/PHPUnit_SkeletonGenerator
+We have been given a large grant for this project, but will also welcome more support.
+Open Source projects work by creating a project which anyone can join in with, but providing
+the support around the outside is the commercial side of the project.
+
+We are able to link the site up to print media, do marketing, link with community groups,
+work with focus groups, organise hack days and much more to customise this basic project
+into something which is suitable for your own needs. If you would like to discuss this further
+please contact will@bcslichfield.com to discuss this and other options.
+
+If you would like to give a donation towards a certain feature, this is also possible
+by contacting the email above.
+
+###Spread the word
+
+Even if you are not technical, you can still share, follow and email people in your organisation
+about the project. If you do feel you could give technical expertise within your organisation,
+or know someone who could, we're always looking for open source coding enthusiasts as well!

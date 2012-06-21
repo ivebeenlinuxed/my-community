@@ -14,6 +14,7 @@ MultiSectionTypeahead = function(el) {
 	});
 	
 	this.onBlur = function() {
+		return;
 		this.dropdown.remove();
 		this.dropdown.css("display", "none");
 	}

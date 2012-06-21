@@ -252,4 +252,9 @@ table caption {
 .navbar-search > input {
 	width: 300px;
 }
+
+.typeahead  li a {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
