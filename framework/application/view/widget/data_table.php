@@ -1,6 +1,5 @@
 <div id="<?php echo $controller->id ?>">
 	<table class="table table-striped table-bordered">
-		<caption>Upcoming events in Cheshire West and Chester</caption>
 		<thead>
 			<tr>
 				<?php 

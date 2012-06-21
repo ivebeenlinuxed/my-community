@@ -166,3 +166,29 @@
 .edit-hidden {
 	display: none;
 }
+
+
+/**
+ * Groups block on home page
+ */
+#organisations .org {
+	width: 48%;
+	float: left;
+	margin: 1% 1%;
+	padding: 0;
+}
+#organisations .org img {
+	float: left;
+	margin: 0.7em;
+}
+#organisations .org h2 {
+	font-size: 18px;
+}
+#organisations .org p a {
+	display: inline;
+}
+
+/* Calendar widget, home page */
+#sidebar .calendar .ui-datepicker {
+	margin: 0 auto;
+}

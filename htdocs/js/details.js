@@ -48,4 +48,11 @@ $(document).ready(function() {
 			staffid : "991234"
 		}
 	});
+	
+	$('.calendar').datepicker({
+		onSelect: function(dateText, inst) {
+			// @todo redirect to the correct date page
+			//$(window.location).attr('href', '');
+		}
+	});
 });
