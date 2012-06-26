@@ -14,6 +14,15 @@ class Event extends DBObject {
 	}
 	
 	/**
+	 * Gets the venue of the event
+	 * 
+	 * @return \Model\Venue
+	 */
+	public function getVenue() {
+		 return new Venue($this->venue);
+	}
+	
+	/**
 	 * Gets the group which is associated with the event
 	 * 
 	 * @return \Model\Group

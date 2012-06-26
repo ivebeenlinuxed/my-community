@@ -15,7 +15,6 @@ function pjax_handler() {
 	if ($(this).attr("data-pjax-replace") !== false) {
 		options.replace = true;
 	}
-	console.log(options);
 	$(this).pjax(options);
 	if (!$($(this).attr("data-pjax")).prop("pjaxed")) {
 		$($(this).attr("data-pjax")).on('pjax:end', function() {

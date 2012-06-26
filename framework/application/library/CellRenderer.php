@@ -23,4 +23,16 @@ class CellRenderer {
 	public static function EventDescription($data, $col) {
 		return '<a href="/event/'.$data->id.'">'.(($data->title == "") ? substr($data->description, 0, 50).'</a>...' : $data->title).'</a>';
 	}
+	
+	/**
+	 * Render a hidden field
+	 * 
+	 * @param \Model\DBObject $data The database object
+	 * @param string          $col  The column to be added
+	 * 
+	 * @return string
+	 */
+	public static function HiddenField($data, $col) {
+		return "<input type='hidden' name='".$data->getUniqueIdentifier()."_{$col}' value='{$data->$col}' />";
+	}
 }

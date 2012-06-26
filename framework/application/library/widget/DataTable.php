@@ -10,6 +10,7 @@ class DataTable extends PageWidget {
 	public $paginationLink = "";
 	
 	public $columns = array();
+	public $hidden_columns = array();
 	
 	public function __construct($data) {
 		$this->data = $data;
@@ -31,6 +32,10 @@ class DataTable extends PageWidget {
 		$this->columns[] = array($name, $label, $renderer);
 	}
 	
+	public function addHiddenColumn($name, $renderer) {
+		$this->hidden_columns[] = array($name, $renderer);
+	}
+	
 	public function getCellTitle($col) {
 		return $this->columns[$col][1] === false?
 		$this->columns[$col][0]
@@ -45,5 +50,10 @@ class DataTable extends PageWidget {
 		} else {
 			return call_user_func_array($this->columns[$col][2], array($data, $dbCol));
 		}
+	}
+	
+	public function renderHiddenCell($data, $col) {
+		$dbCol = $this->hidden_columns[$col][0];
+		return call_user_func_array($this->hidden_columns[$col][1], array($data, $dbCol));
 	}
 }

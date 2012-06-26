@@ -13,9 +13,9 @@ if (!isset($banner)) {
 	google.load("jquery", "1.7.1");
 	google.load("jqueryui", "1.8.11");
 	google.load("chrome-frame", "1.0.2");
-	//google.load("maps", "3", {
-	//	other_params: "sensor=true"
-	//});
+	google.load("maps", "3", {
+		other_params: "sensor=true"
+	});
 	</script>
 	
 	<!-- TinyMCE -->
@@ -70,6 +70,7 @@ if (!isset($banner)) {
 	<script type="text/javascript" src="/js/jquery.pjax.js"></script>
 	<script type="text/javascript" src="/js/pjax-strap.js"></script>
 	<script type="text/javascript" src="/js/MultiSectionTypeahead.js"></script>
+	<script type="text/javascript" src="/js/map.js"></script>
 </head>
 <body>
 	<div id="body" class="container">
