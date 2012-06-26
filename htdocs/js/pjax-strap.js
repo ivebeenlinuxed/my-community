@@ -12,8 +12,8 @@ function scan_pjax(el) {
 
 function pjax_handler() {
 	options = {};
-	if ($(this).attr("data-pjax-replace") !== false) {
-		options.replace = true;
+	if ($(this).attr("data-pjax-replace") === "") {
+		options.replaceContainer = true;
 	}
 	$(this).pjax(options);
 	if (!$($(this).attr("data-pjax")).prop("pjaxed")) {
