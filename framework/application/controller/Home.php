@@ -69,11 +69,14 @@ class Home extends BaseController {
 			$w->addCSSClass("org");
 			$w->setTitle($g->name);
 			$w->setLink("/group/".$g->id);
-			$w->addSubline($g->description);
+			$w->setImage("/uploads/group/{$g->id}_profile_pic.jpg");
+			$w->addSubline(substr($g->description, 0, 100));
+			$cards[] = $w;
 		}
-		$table = new \Library\Widget\ContactCardContainer($e);
-		$table->paginationLink = "/home?action=contact_container";
+		$table = new \Library\Widget\WidgetPaginationContainer($cards);
+		$table->paginationLink = array(&$this, "generatePaginationLink");
 		$table->page = $page;
+		$table->Render();
 		
 	}
 }

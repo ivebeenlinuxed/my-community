@@ -1,5 +1,5 @@
 <?php
-namespace \Library\Widget;
+namespace Library\Widget;
 
 class WidgetPaginationContainer extends PageWidget {
 	public $widgets;
