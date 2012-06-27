@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	scan_pjax(false);
+	$("body").on("pjax:success", function(a) {
+		scan_pjax(a.target);
+	})
 });
 
 function scan_pjax(el) {
@@ -16,10 +19,4 @@ function pjax_handler() {
 		options.replaceContainer = true;
 	}
 	$(this).pjax(options);
-	if (!$($(this).attr("data-pjax")).prop("pjaxed")) {
-		$($(this).attr("data-pjax")).on('pjax:end', function() {
-			scan_pjax(this);
-		});
-		$($(this).attr("data-pjax")).prop("pjaxed", true);
-	}
 }
