@@ -28,6 +28,7 @@ namespace Controller;
  *
  */
 class Search extends BaseController {
+	public $default_radius = 10;
 	/**
 	 * General search for all types of resource
 	 * 
@@ -45,5 +46,10 @@ class Search extends BaseController {
 			//FIXME Search HTML view needs to be made
 			throw new Exception("Not yet implemented");
 		}
+	}
+	
+	public function total() {
+		echo json_encode($_GET);
+		return;
 	}
 }

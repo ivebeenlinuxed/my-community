@@ -258,3 +258,34 @@ table caption {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
+#big_search {
+	background-image: url(/images/search_1.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 20px;
+}
+
+#big_search h1 {
+	margin-bottom: 20px;
+}
+
+#big_search p {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#geo-popover .popover-content {
+	padding: 0;
+	height: 280px;
+	width: 280px;
+	
+}
+
+#big_search .control-group.success input {
+	background-color: #7ABA7B;
+}
+
+#big_search .control-group.error input {
+	background-color: #D59392;
+}

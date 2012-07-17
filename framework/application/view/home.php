@@ -1,51 +1,41 @@
-		<div id="content" class="row">
-			<article class="span8">
-				<div id="events" class="section">
-					<h2>Upcoming Events</h2>
-					<form class="form-search">
-						<input type="text" class="input-medium search-query span7" placeholder="Search for events near you e.g. dancing near CW8 2AB">
-						<button type="submit" class="btn">Search</button>
-					</form>
-					<?php
-						$controller->event_table();
-					?>
-					
-				</div>
-		
-				<h2>Local Groups</h2>
-				<div id="organisations" class="section">
-					<div>
-						<div>
-							<form class="form-search">
-								<input type="text" class="input-medium search-query span7" placeholder="Enter your postcode or a place for groups near you">
-								<button type="submit" class="btn">Search</button>
-							</form>
-							
-							<?php 
-							$controller->contact_container();
-							?>
-						</div>
-					</div>
-				</div>
-		
-			</article>
-			
-			<div id="sidebar" class="span4">
-				<h2>Sidebar</h2>
-				<form class="form-search">
-					<input type="text" class="input-medium search-query span3" placeholder="Enter your postcode for events near you">
-					<button type="submit" class="btn">Search</button>
-				</form>
-				<div class="map" id="home-map" style="height:370px">
-					<p>MAP HERE PLEASE, showing pins for each of the events listed in the table to the left</p>
-				</div>
-				
-				<div class="calendar"></div>
-				
-				<div class="facebook"></div>
-				
-				<div class="twitter"></div>
-			</div>
+<form class="hero-unit" id="big_search" action="/search/redirector" method="get">
+  <h1>I am looking for...</h1>
+  <p><select class="span3"><option>Events</option><option>Groups</option><option>Places</option></select> near <span class="control-group"><input class="span3" type="text" id="location" placeholder="Anywhere..." /></span></p>
+  <input type="hidden" name="lat" id="search_lat" />
+  <input type="hidden" name="lng" id="search_lng" />
+  <p> related to <input type="text" class="span6" placeholder="Dance, Music, Cards?" /></p>
+  <p class="pull-right">
+    <input type="submit" class="btn btn-primary btn-large" value="View a list">
+    <input type="submit" class="btn btn-success btn-large" value="View a map">
+  </p>
+  	<div id="counter">
+  		<div>
+  			<p class="position">
+  				<span class="digit static">1</span>
+  			</p>
+  		</div>
+  		<div>
+  			<p class="position">
+  				<span class="digit static">2</span>
+  			</p>
+  		</div>
+  		<div>
+  			<p class="position">
+  				<span class="digit static">3</span>
+  			</p>
+  		</div>
+  		<div>
+  			<p class="position">
+  				<span class="digit static">4</span>
+  			</p>
+  		</div>
+  		<span>Results Found</span>
+  	</div>
+</form>
+<?php
+$r = srand(date("Ymd"));
+$c = \Model\Group::Count();
+?>
+<h2>Today's Featured Group: </h2>
 
-		</div>
-		
+<h2>Events Happening Today</h2>

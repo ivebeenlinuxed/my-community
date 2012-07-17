@@ -11,7 +11,6 @@ if (!isset($banner)) {
 	<script type="text/javascript" src="https://www.google.com/jsapi?key=AIzaSyC74oP0zrh5SvDWO0ycBeg8dmGsmOlQDdg"></script>
 	<script type="text/javascript">
 	google.load("jquery", "1.7.1");
-	google.load("jqueryui", "1.8.11");
 	google.load("chrome-frame", "1.0.2");
 	google.load("maps", "3", {
 		other_params: "sensor=true"
@@ -29,8 +28,9 @@ if (!isset($banner)) {
 	<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" media="all" />
+	<!-- 
 	<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-responsive.min.css" media="all" />
-	
+	 -->
 	
 	<script type="text/javascript" src="/js/bootstrap.js"></script>
 	<?php if ($banner) { ?>
@@ -50,27 +50,29 @@ if (!isset($banner)) {
 	<!-- jQuery -->
 	<link rel="stylesheet" type="text/css" href="/css/jquery.autocomplete.css" media="all" />
 	<script type="text/javascript" src="/js/jquery.autocomplete.min.js"></script>
-	
 	<script type="text/javascript" src="/js/jquery-ui-timepicker-addon.js"></script>
-	
-	
 	<script type="text/javascript" src="/jquery-ui/js/jquery-ui-1.8.17.custom.min.js"></script>
 	<link type="text/css" href="/jquery-ui/css/ui-lightness/jquery-ui-1.8.17.custom.css" rel="stylesheet" />	
-	
 	<script type="text/javascript" src="/js/jquery_ui_loader.js"></script>
+	<script type="text/javascript" src="/js/home-search.js"></script>
+	
 	
     <!-- Stylesheets -->
 	<link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/counter.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/css/detail.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/home.css" media="all" />
 	
 	<!-- JavaScript -->
 	<script type="text/javascript" src="/js/details.js"></script>
-	
 	<script type="text/javascript" src="/js/jquery.pjax.js"></script>
 	<script type="text/javascript" src="/js/pjax-strap.js"></script>
 	<script type="text/javascript" src="/js/MultiSectionTypeahead.js"></script>
 	<script type="text/javascript" src="/js/map.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="/css/featured.css" />
+	<script type="text/javascript" src="/js/featured.js"></script>
 </head>
 <body>
 	<div id="body" class="container">

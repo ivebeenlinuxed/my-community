@@ -1,18 +1,20 @@
+default_map = {
+    zoom: 13,
+    center: new google.maps.LatLng(53.185259,-2.887602),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+
 $(document).ready(function() {
 	$(".map").each(function() {
-		this.map = new google.maps.Map(this, {
-	          zoom: 13,
-	          center: new google.maps.LatLng(53.185259,-2.887602),
-	          mapTypeId: google.maps.MapTypeId.ROADMAP
-	        });
+		this.map = new google.maps.Map(this, default_map);
 		this.points = new Array();
 	});
 	
 	
 	$("#events").live("pjax:end", function () {
-		home_ajaxed_map();
+		//home_ajaxed_map();
 	});
-	home_ajaxed_map();
+	//home_ajaxed_map();
 });
 
 function home_ajaxed_map() {

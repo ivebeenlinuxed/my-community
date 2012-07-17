@@ -37,4 +37,13 @@ abstract class DBObject extends \System\Model\DBObject {
 		}
 		return substr($out, 0, -1);
 	}
+	
+	public static function Count() {
+		$db = self::getDB();
+		$c = get_called_class();
+		$s = $db->Select($c);
+		$s->addCount("c");
+		$e = $s->Exec();
+		echo $e[0]->c;
+	}
 }
