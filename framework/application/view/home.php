@@ -1,12 +1,12 @@
-<form class="hero-unit" id="big_search" action="/search/redirector" method="get">
+<form class="hero-unit" id="big_search" action="/search" method="get">
   <h1>I am looking for...</h1>
-  <p><select class="span3"><option>Events</option><option>Groups</option><option>Places</option></select> near <span class="control-group"><input class="span3" type="text" id="location" placeholder="Anywhere..." /></span></p>
+  <p><select class="span3" id="search_type" name="type"><option value="event">Events</option><option value="group">Groups</option><option value="place">Places</option></select> near <span class="control-group"><input class="span3" type="text" id="location" placeholder="Anywhere..." /></span></p>
   <input type="hidden" name="lat" id="search_lat" />
   <input type="hidden" name="lng" id="search_lng" />
-  <p> related to <input type="text" class="span6" placeholder="Dance, Music, Cards?" /></p>
+  <p> related to <input type="text" class="span6" id="search_keywords" name="q" placeholder="Dance, Music, Cards?" /></p>
   <p class="pull-right">
-    <input type="submit" class="btn btn-primary btn-large" value="View a list">
-    <input type="submit" class="btn btn-success btn-large" value="View a map">
+    <input type="submit" class="btn btn-primary btn-large" name="list" value="View a list">
+    <input type="submit" class="btn btn-success btn-large" name="map" value="View a map">
   </p>
   	<div id="counter">
   		<div>

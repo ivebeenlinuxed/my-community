@@ -301,7 +301,7 @@ abstract class DBObject implements \Library\Database\LinqObject {
 	public static function Search($expression, $field) {
 		$c = get_called_class();
 		$DB = $c::getDB();
-		if (strpos(" ", $expression) !== false) {
+		if (@strpos(" ", $expression) !== false) {
 			$a = explode(" ", $expression);
 		} else {
 			$a = array($expression);
@@ -312,6 +312,9 @@ abstract class DBObject implements \Library\Database\LinqObject {
 
 
 		foreach ($a as $s) {
+			if ($s == "") {
+				continue;
+			}
 			$and->like($field, "%".$s."%");
 		}
 

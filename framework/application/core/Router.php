@@ -20,16 +20,18 @@ class Router extends \System\Core\Router {
 		if (isset($matches['extension'])) {
 			switch ($matches['extension']) {
 				case "json":
-					self::$mode = MODE_JSON;
+					self::$mode = self::MODE_JSON;
 					break;
 				case "html":
-					self::$mode = MODE_HTML;
+					self::$mode = self::MODE_HTML;
 					break;
 				default:
-					self::$mode = MODE_HTML;
+					self::$mode = self::MODE_HTML;
 					break;
 			}
 			$array[count($array)-1] = substr($array[count($array)-1], 0, (strlen($matches['extension'])+1)*-1);
+		} else {
+			self::$mode = self::MODE_HTML;
 		}
 		return parent::getController($array);
 	}

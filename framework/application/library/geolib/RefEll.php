@@ -49,7 +49,7 @@ namespace Library\GeoLib;
    * The second character can be any uppercase character from A through Z
    * excluding I.
    *
-   * @param $ref Grid Reference to convert
+   * @param string $ref Grid Reference to convert
    * 
    * @return \Library\GeoLib\OSRef
    * @since 2.1

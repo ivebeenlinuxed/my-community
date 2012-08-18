@@ -29,6 +29,12 @@ $(document).ready(function() {
 		$(this).popover("hide");
 	});
 	*/
+	
+	$("#search_type").change(function() {
+		trigger_count();
+	});
+	
+	trigger_count();
 });
 
 function resetLocation() {
@@ -69,10 +75,18 @@ function checkLocation() {
  */
 function trigger_count() {
 	$.ajax({
-		url: "search/total.json",
-		data: {lat: $("#search_lat").val(), lng: $("#search_lng"), keywords: $("#search_keywords"), type: $("#search_type")},
-		success: function() {
+		type: "GET",
+		url: "/search/total.json",
+		data: {
+			lat: $("#search_lat").val(),
+			lng: $("#search_lng").val(),
+			keywords: $("#search_keywords").val(),
+			type: $("#search_type").val()
+		},
+		dataType: "json",
+		success: function(data) {
 			console.log("SUCCESS");
+			console.log(data);
 		}
 	});
 }

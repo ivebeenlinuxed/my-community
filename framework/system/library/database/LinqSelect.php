@@ -40,15 +40,31 @@ class LinqSelect implements LinqQuery {
 	public function Select($name="t") {
 		return new LinqSelect($this->db, $this, $name);
 	}
-
+	
+	
+	/**
+	 * Gets a filter whos conjunction is AND
+	 * 
+	 * @return \Library\Database\LinqAND
+	 */
 	public function getAndFilter() {
 		return $this->db->getAndFilter();
 	}
-
+	
+	/**
+	 * Gets a filter whos conjunction is OR
+	 *
+	 * @return \Library\Database\LinqOR
+	 */
 	public function getOrFilter() {
 		return $this->db->getOrFilter();
 	}
-
+	
+	/**
+	 * Gets a database FROM section
+	 *
+	 * @return string
+	 */
 	public function getFrom() {
 		if (!is_object($this->obj) && class_exists($this->obj) && \System\Library\StdLib::is_interface_of($this->obj, "\Library\Database\LinqObject")) {
 			$o = $this->obj;
@@ -57,7 +73,10 @@ class LinqSelect implements LinqQuery {
 			return "(".$this->obj->getSQL().") AS ".$this->name;
 		}
 	}
-
+	
+	/**
+	 * Gets the database table
+	 */
 	public function getTable() {
 		if (!is_object($this->obj) && class_exists($this->obj) && \System\Library\StdLib::is_interface_of($this->obj, "\Library\Database\LinqObject")) {
 			$o = $this->obj;
@@ -66,7 +85,12 @@ class LinqSelect implements LinqQuery {
 			return "`".$this->name."`";
 		}
 	}
-
+	
+	/**
+	 * Gets the fields to be selected in a SELECT query
+	 * 
+	 * @return string
+	 */
 	public function getSelects() {
 		$sql = "";
 
@@ -109,7 +133,13 @@ class LinqSelect implements LinqQuery {
 		}
 		return $sql;
 	}
-
+	
+	
+	/**
+	 * Get the joins on a query
+	 * 
+	 * @return string
+	 */
 	public function getJoins() {
 		$sql = "";
 		if (count($this->join) > 0) {
@@ -124,6 +154,11 @@ class LinqSelect implements LinqQuery {
 		return $sql;
 	}
 
+	/**
+	 * Add the filters to the query
+	 * 
+	 * @return \Library\Database\LinqEquality
+	 */
 	public function getFilters() {
 		if (!$this->filter) {
 			$f = $this->db->getAndFilter();
@@ -135,7 +170,11 @@ class LinqSelect implements LinqQuery {
 		}
 		return $f;
 	}
-
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Library\Database.LinqQuery::getSQL()
+	 */
 	public function getSQL() {
 		$o = $this->obj;
 		$sql = "SELECT";
@@ -188,7 +227,16 @@ class LinqSelect implements LinqQuery {
 		}
 		return $sql;
 	}
-
+	
+	/**
+	 * Add a join query
+	 * 
+	 * @param string                       $field   The field in this query which to join
+	 * @param \Library\Database\LinqSelect $select  The Select query to join to
+	 * @param string                       $foreign The key in the joined query to partner with
+	 * 
+	 * @return \Library\Database\LinqSelect
+	 */
 	function joinLeft($field, $select, $foreign) {
 		if ($select instanceof LinqSelect) {
 			$this->join[] = array("LEFT", $field, $select, $foreign);
@@ -197,7 +245,16 @@ class LinqSelect implements LinqQuery {
 		}
 		return $this;
 	}
-
+	
+	/**
+	 * Add a join query
+	 *
+	 * @param string                       $field   The field in this query which to join
+	 * @param \Library\Database\LinqSelect $select  The Select query to join to
+	 * @param string                       $foreign The key in the joined query to partner with
+	 * 
+	 * @return \Library\Database\LinqSelect
+	 */
 	function joinRight($field, $select, $foreign) {
 		if ($select instanceof \Library\Database\LinqSelect) {
 			$this->join[] = array("RIGHT", $field, $select, $foreign);
@@ -206,7 +263,15 @@ class LinqSelect implements LinqQuery {
 		}
 		return $this;
 	}
-
+	
+	/**
+	 * Adds a field to select
+	 * 
+	 * @param string $f  The field in the database to select
+	 * @param string $as The returned name of the field
+	 * 
+	 * @return \Library\Database\LinqSelect
+	 */
 	function addField($f, $as=null) {
 		if ($f != "*") {
 			$f = "`".$f."`";
@@ -214,18 +279,41 @@ class LinqSelect implements LinqQuery {
 		$this->fields[] = array($this->getTable().".".$this->db->escape_string($f), $this->db->escape_string($as));
 		return $this;
 	}
-
+	
+	/**
+	 * Get the full name of the field, including the table/view name
+	 * 
+	 * @param string $f the field to get full name of
+	 * 
+	 * @return string
+	 */
 	function getFullName($f) {
 		if ($f != "*") {
 			$f = "`".$f."`";
 		}
 		return $this->getTable().".".$this->db->escape_string($f);
 	}
-
+	
+	/**
+	 * Adds a select, bypassing the escaping and cleansing routines
+	 * 
+	 * @param string $sum The raw query to select
+	 * @param string $as  Name of variable result should be returned as
+	 * 
+	 * @return \Model\Database\LinqSelect
+	 */
 	function addRaw($sum, $as) {
 		$this->fields[] = array($sum, $this->db->escape_string($as));
+		return $this;
 	}
-
+	
+	/**
+	 * Adds a string of filters to the select
+	 * 
+	 * @param \Library\Database\LinqEquality $f The filter to add
+	 * 
+	 * @return \Model\Database\LinqSelect
+	 */
 	function setFilter($f) {
 		if (!is_subclass_of($f, "\Library\Database\LinqEquality")) {
 			die("Must be a LINQ Equality");
@@ -235,7 +323,15 @@ class LinqSelect implements LinqQuery {
 		}
 		return $this;
 	}
-
+	
+	/**
+	 * Adds a count to the select
+	 * 
+	 * @param string $field The returning name of the field
+	 * @param string $name  Optional name of the column which to count unique values of
+	 * 
+	 * @return \Model\Database\LinqSelect
+	 */
 	function addCount($field, $name="*") {
 		if ($name != "*") {
 			$name = "`".$this->db->escape_string($name)."`";
@@ -243,7 +339,15 @@ class LinqSelect implements LinqQuery {
 		$this->fields[] = array("COUNT(".$name.")", $this->db->escape_string($field));
 		return $this;
 	}
-
+	
+	/**
+	 * Sets the LIMIT part of the query
+	 * 
+	 * @param int $start Starting position of the query
+	 * @param int $end   Length of the query
+	 * 
+	 * @return \Model\Database\LinqSelect
+	 */
 	function setLimit($start, $end) {
 		if (!is_int($start) || !is_int($end)) {
 			throw LinqException("Limit must be integer");
@@ -253,12 +357,29 @@ class LinqSelect implements LinqQuery {
 		return $this;
 
 	}
-
+	
+	/**
+	 * Set the "GROUP BY" Parameter
+	 * 
+	 * @param string $name Field or expression to group by
+	 * @param int    $raw  Whether the value should bypass escaping and cleansing
+	 * 
+	 * @return \Library\Database\LinqSelect
+	 */
 	function setGroup($name, $raw=false) {
 		$this->group = array($name, $raw);
 		return $this;
 	}
-
+	
+	
+	/**
+	 * Set the "ORDER BY" Parameter
+	 * 
+	 * @param string  $name Name of the field to order by
+	 * @param boolean $asc  Whether to sort Ascending or not
+	 * 
+	 * @return \Library\Database\LinqSelect
+	 */
 	function setOrder($name, $asc=false) {
 		$this->order = $name;
 		if ($asc) {
@@ -268,7 +389,12 @@ class LinqSelect implements LinqQuery {
 		}
 		return $this;
 	}
-
+	
+	/**
+	 * (non-PHPdoc)
+	 * 
+	 * @see Library\Database.LinqQuery::Exec()
+	 */
 	function Exec() {
 		return $this->db->Exec($this->getSQL());
 	}

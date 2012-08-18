@@ -56,4 +56,8 @@ class Event extends BaseController {
 		echo "INDEX PAGE FOR Event";
 		$this->getTemplateBottom();
 	}
+	
+	private function search() {
+		
+	}
 }
