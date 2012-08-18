@@ -1,14 +1,49 @@
 <?php
+/**
+ * 
+ * @author star241
+ *
+ */
 namespace Library\Widget;
 
+/**
+ * 
+ * @author star241
+ *
+ */
 class WidgetPaginationContainer extends PageWidget {
-	public $widgets;
+	/**
+	 * The ID of the container (used for AJAX)
+	 * @var string
+	 */
 	public $id;
+	
+	/**
+	 * The current page
+	 * 
+	 * @var int
+	 */
 	public $page = 0;
+	
+	/**
+	 * The size of the page
+	 * 
+	 * @var int
+	 */
 	public $pageSize = 10;
 
+	/**
+	 * 
+	 * @var callable A function to generate the pagination link function(int $pageNumber, \Library\Pagination $controller)
+	 * @see \Library\Pagination
+	 */
 	public $paginationLink = "";
-
+	
+	/**
+	 * 
+	 * @var \Library\Widget\PageWidget Widgets to be paginated
+	 */
+	public $widgets;
 
 	/**
 	 * Creates a container of Widgets
@@ -35,5 +70,13 @@ class WidgetPaginationContainer extends PageWidget {
 		}
 		\Core\Router::loadView("widget/widget_pagination_container", array("data"=>$data, "pagination"=>$pagination, "controller"=>&$this));
 	}
-
+	
+	/**
+	 * Gets the total number of pages in current query
+	 * 
+	 * @return int
+	 */
+	public function getPages() {
+		return ceil(count($this->widgets)/$this->pageSize);
+	}
 }

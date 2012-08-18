@@ -35,6 +35,17 @@ class Search extends BaseController {
 	 * @return null
 	 */
 	public function index() {
+		/**
+		 * Variables to pass to view
+		 */
+		$var;
+		
+		/**
+		 * Only load template if we aren't a PJAX request
+		 */
+		if (!isset($_SERVER['HTTP_X_PJAX'])) {
+			$this->getTemplateTop();
+		}
 		$q = isset($_GET['q'])? str_replace(",", " ", $_GET['q']) : "";
 		$out = array();
 		$out['venues'] = \Model\Venue::Search($q, "name");
@@ -43,15 +54,19 @@ class Search extends BaseController {
 		if (\Core\Router::$mode == \Core\Router::MODE_JSON) {
 			echo json_encode($out);
 		} elseif (\Core\Router::$mode == \Core\Router::MODE_HTML) {
+			$var = array("data"=>$out, "q"=>$_GET['q']);
 			if (isset($_GET['map'])) {
-				$view = "map";
+				\Core\Router::loadView("search/map", $var);
 			} else {
-				$view = "list";
+				\Core\Router::loadView("search/list", $var);
 			}
-			\Core\Router::loadView("search", array("data"=>$out, "view"=>$view, "q"=>$_GET['q']));
+			
 		} else {
 			//FIXME Search HTML view needs to be made
 			throw new Exception("Not yet implemented");
+		}
+		if (!isset($_SERVER['HTTP_X_PJAX'])) {
+			$this->getTemplateBottom();
 		}
 	}
 	
