@@ -20,6 +20,7 @@ use Library\Database\DBException;
  * Class containing LINQ like interface using late static bindings
  *
  * @abstract
+ * 
  */
 abstract class DBObject implements \Library\Database\LinqObject {
 	/**
@@ -52,12 +53,30 @@ abstract class DBObject implements \Library\Database\LinqObject {
 	 */
 	public static abstract function getPrimaryKey();
 
+	/**
+	 * Returns the LinqDB associated with this object (gets the mysqli database)
+	 * 
+	 * @see \Library\Database\LinqDB
+	 * @return \Library\Database\LinqDB;
+	 */
 	public static abstract function getDB();
 
 	public $DB;
-
+	
+	/**
+	 * Used internally for the table name
+	 * 
+	 * @deprecated
+	 * @var string
+	 */
 	private $Table;
-
+	
+	/**
+	 * Used interanally for primary key
+	 * 
+	 * @deprecated
+	 * @var string
+	 */
 	private $PrimaryKey;
 
 	/**
@@ -65,8 +84,11 @@ abstract class DBObject implements \Library\Database\LinqObject {
 	 *
 	 * Create new object using primary key. Dynamically creates the database
 	 * turples into properties
+	 * 
+	 * If this key is a concatinated key an associative array may be used to pull the selected row
 	 *
-	 * @param string $Id
+	 * @param string $Id The ID (from Primary Key columns) of the object to pull.
+	 * 
 	 * @return void
 	 */
 	public function __construct($Id) {
@@ -103,8 +125,9 @@ abstract class DBObject implements \Library\Database\LinqObject {
 		$select->setFilter($and);
 		$s = $select->Exec();
 		if (count($s) == 1) {
-			foreach ($s[0] as $Key=>$Data)
+			foreach ($s[0] as $Key=>$Data) {
 				$this->$Key = $Data;
+			}
 		} else {
 			throw new DBException("No object with ID '$Id'");
 		}
@@ -115,8 +138,9 @@ abstract class DBObject implements \Library\Database\LinqObject {
 	 *
 	 * Set attribute in database and in the object. Value must have _toString() method
 	 *
-	 * @param string $name
-	 * @param mixed $value
+	 * @param string $name  Name of field
+	 * @param mixed  $value Value of field
+	 * 
 	 * @return void
 	 */
 	public function setAttribute($name, $value) {
@@ -189,7 +213,8 @@ abstract class DBObject implements \Library\Database\LinqObject {
 	}
 
 	public static function Truncate() {
-		$DB = self::getDB();
+		$c = get_called_class();
+		$DB = $c::getDB();
 		$sQ = "TRUNCATE `".$c::getTable()."`";
 		$DB->query($sQ);
 	}

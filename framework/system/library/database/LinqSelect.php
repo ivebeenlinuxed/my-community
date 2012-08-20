@@ -21,10 +21,10 @@ class LinqSelect implements LinqQuery {
 			throw new LinqException("Parameter 1 is not a LinqDB");
 		}
 		$this->db = $db;
-		if ((is_object($obj) && is_a($obj, "\Library\Database\LinqSelect")) || (class_exists($obj) && \System\Library\StdLib::is_interface_of($obj,"\Library\Database\LinqObject")) ) {
+		if ((is_object($obj) && is_a($obj, "\Library\Database\LinqSelect")) || (class_exists($obj) && \System\Library\StdLib::is_interface_of($obj, "\Library\Database\LinqObject"))) {
 			$this->obj = $obj;
 			$this->name = $name;
-		} elseif (class_exists($obj,"\Library\Database\LinqObject")) {
+		} elseif (class_exists($obj, "\Library\Database\LinqObject")) {
 			throw new LinqException("Not a LINQ object");
 		}
 
@@ -172,8 +172,10 @@ class LinqSelect implements LinqQuery {
 	}
 	
 	/**
-	 * (non-PHPdoc)
-	 * @see Library\Database.LinqQuery::getSQL()
+	 * Gets the SQL string of the query
+	 * 
+	 * @see Library\Database\LinqQuery::getSQL()
+	 * @return string The SQL Query to be executed
 	 */
 	public function getSQL() {
 		$o = $this->obj;

@@ -1,15 +1,27 @@
 <?php
+/**
+ * 
+ * 
+ */
+
 define("START_MEM", memory_get_usage());
 define("BOILER_LOCATION", __DIR__."/../framework/");
 define("BOILER_TMP", __DIR__."/../tmp/");
 define("BOILER_HTDOCS", __DIR__);
 
-
+/**
+ * Automatically loads the needed classes in the rest of the framework
+ * 
+ * @param string $load Class which is being loaded
+ * 
+ * @return null
+ */
 function autoload($load) {
 	$e = explode("\\", $load);
 	$class = array_pop($e);
-	foreach ($e as $key=>$data)
+	foreach ($e as $key=>$data) {
 		$e[$key] = strtolower($data);
+	}
 	if (count($e) > 0) {
 		if ($e[0] == "system") {
 			$e = array_slice($e, 1);
@@ -34,7 +46,6 @@ function autoload($load) {
 
 spl_autoload_register("autoload");
 Core\Router::Init();
-require __DIR__."/../build/Selenium2PHPUnit/includes/prepend.php";
 
 if (!isset($_SERVER['no_run'])) {
 	if (isset($_SERVER['_']))
@@ -50,5 +61,3 @@ if (!isset($_SERVER['no_run'])) {
 	call_user_func_array(array($obj, $call[1]), $call[2]);
 }
 
-
-require __DIR__."/../build/Selenium2PHPUnit/includes/append.php";

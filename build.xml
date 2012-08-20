@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="My Project" default="build">
-
+	<property name="cmd.doxygen" value="/usr/bin/doxygen" />
 	<property name="db" value="urban_walks" />
 	<property name="db_user" value="urban-walks" />
 	<property name="db_password" value="urbanwalkspasswd123=" />
@@ -11,7 +11,12 @@
 	<target name="test" depends="phpunit,phpcpd,phpmd,phpcs,skelgen" />
 	<target name="configure" depends="db-config" />
 
-
+	<target name="docs">
+		<exec executable="${cmd.doxygen}" dir="${basedir}" failonerror="off">
+					<arg
+						line=" build/doxyfile.cfg" />
+				</exec>
+	</target>
 	<!-- Housekeeping -->
 	<target name="clean">
 		<delete dir="${basedir}/build/logs" />
@@ -20,7 +25,11 @@
 
 	<target name="init" depends="clean">
 		<mkdir dir="${basedir}/build/logs" />
+		<mkdir dir="${basedir}/build/logs/docs" />
+		<mkdir dir="${basedir}/build/logs/docs/doxygen" />
+		<mkdir dir="${basedir}/build/logs/docs/clover" />
 		<chmod dir="${basedir}/build/logs" perm="0777" />
+		<chmod dir="${basedir}/build/logs/docs/doxygen" perm="0777" />
 	</target>
 
 	<!-- Configuration -->
@@ -62,7 +71,7 @@
 		<exec executable="phpcs" dir="${basedir}/framework"
 			output="${basedir}/build/logs/checkstyle.xml" failonerror="off">
 			<arg
-				line=" --report=checkstyle --tab-width=4 --standard=PEAR --extensions=php '${basedir}/framework'" />
+				line=" --standard='${basedir}/build/PHPCS' --report=checkstyle --tab-width=4 --standard=PEAR --extensions=php '${basedir}/framework'" />
 		</exec>
 	</target>
 
