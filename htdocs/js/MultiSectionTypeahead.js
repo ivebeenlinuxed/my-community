@@ -1,6 +1,6 @@
 MultiSectionTypeahead = function(el) {
 	this.el = $(el);
-	this.asyncCaller = "/search";
+	this.asyncCaller = "/search.json";
 	this.el.get(0).typeahead = this;
 	this.dropdown = $("<ul class='typeahead dropdown-menu'></ul>").css("display", "none");
 	this.onFocus = function() {
@@ -14,7 +14,6 @@ MultiSectionTypeahead = function(el) {
 	});
 	
 	this.onBlur = function() {
-		return;
 		this.dropdown.remove();
 		this.dropdown.css("display", "none");
 	}

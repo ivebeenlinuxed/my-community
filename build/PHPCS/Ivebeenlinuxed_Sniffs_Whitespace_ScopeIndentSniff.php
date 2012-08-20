@@ -6,7 +6,7 @@
  * @package  Boiler
  * @author   ivebeenlinuxed <will@bcslichfield.com>
  * @license  GNU v3.0 http://www.gnu.org/licenses/gpl-3.0.txt
- * @version  GIT: $Id$
+ * @version  GIT: $Id: f1ad6ed791919acb699bc0b3354b6d607c5ea430 $
  * @link     http://www.bcslichfield.com
  *
  */

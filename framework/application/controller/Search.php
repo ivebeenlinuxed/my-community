@@ -29,6 +29,7 @@ namespace Controller;
  */
 class Search extends BaseController {
 	public $default_radius = 10;
+	
 	/**
 	 * General search for all types of resource
 	 * 
@@ -71,9 +72,9 @@ class Search extends BaseController {
 					$data = $out['events'] = \Model\Event::Search($q, "title");
 					break;
 				case "venue":
-					$data = $out['venues'] = \Model\Event::Search($q, "title");
+					$data = $out['venues'] = \Model\Venue::Search($q, "name");
 					break;
-				case "":
+				case "group":
 					$data = $out['groups'] = \Model\Group::Search($q, "name");
 					break;
 					
@@ -95,6 +96,14 @@ class Search extends BaseController {
 		if (!isset($_SERVER['HTTP_X_PJAX']) && \Core\Router::$mode != \Core\Router::MODE_JSON) {
 			$this->getTemplateBottom();
 		}
+	}
+	
+	private function index_json() {
+		
+	}
+	
+	private function index_html() {
+		
 	}
 	
 	/**

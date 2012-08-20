@@ -12,6 +12,7 @@
 	<target name="configure" depends="db-config" />
 
 	<target name="docs">
+		<mkdir dir="${basedir}/build/logs/docs/doxygen" />
 		<exec executable="${cmd.doxygen}" dir="${basedir}" failonerror="off">
 					<arg
 						line=" build/doxyfile.cfg" />

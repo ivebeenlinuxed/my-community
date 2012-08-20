@@ -11,5 +11,20 @@ namespace Library\Widget;
  *
  */
 class SearchResults extends WidgetPaginationContainer {
+	/**
+	 * True if search list should include thumbnail images
+	 * 
+	 * @var boolean
+	 */
+	public $hasThumbnails = false;
 	
+	public function Render() {
+		if ($this->hasThumbnails) {
+			$this->addCSSClass("search-result-thumbs");
+		}
+		foreach ($this->widgets as $w) {
+			$w->renderThumbnail = true;
+		}
+		parent::Render();
+	}
 }

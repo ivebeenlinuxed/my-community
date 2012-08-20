@@ -62,6 +62,7 @@ if (!isset($banner)) {
 	<link rel="stylesheet" href="/css/counter.css" type="text/css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/css/detail.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/css/home.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/widget/search.css" media="all" />
 	
 	<!-- JavaScript -->
 	<script type="text/javascript" src="/js/details.js"></script>

@@ -45,7 +45,7 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Gets a filter whos conjunction is AND
 	 * 
-	 * @return \Library\Database\LinqAND
+	 * @return Library::Database::LinqAND
 	 */
 	public function getAndFilter() {
 		return $this->db->getAndFilter();
@@ -54,7 +54,7 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Gets a filter whos conjunction is OR
 	 *
-	 * @return \Library\Database\LinqOR
+	 * @return Library::Database::LinqOR
 	 */
 	public function getOrFilter() {
 		return $this->db->getOrFilter();
@@ -157,7 +157,7 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Add the filters to the query
 	 * 
-	 * @return \Library\Database\LinqEquality
+	 * @return Library::Database::LinqEquality
 	 */
 	public function getFilters() {
 		if (!$this->filter) {
@@ -174,7 +174,7 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Gets the SQL string of the query
 	 * 
-	 * @see Library\Database\LinqQuery::getSQL()
+	 * @see Library::Database::LinqQuery.getSQL()
 	 * @return string The SQL Query to be executed
 	 */
 	public function getSQL() {
@@ -233,11 +233,11 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Add a join query
 	 * 
-	 * @param string                       $field   The field in this query which to join
-	 * @param \Library\Database\LinqSelect $select  The Select query to join to
-	 * @param string                       $foreign The key in the joined query to partner with
+	 * @param string                        $field   The field in this query which to join
+	 * @param Library::Database::LinqSelect $select  The Select query to join to
+	 * @param string                        $foreign The key in the joined query to partner with
 	 * 
-	 * @return \Library\Database\LinqSelect
+	 * @return Library::Database::LinqSelect
 	 */
 	function joinLeft($field, $select, $foreign) {
 		if ($select instanceof LinqSelect) {
@@ -251,11 +251,11 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Add a join query
 	 *
-	 * @param string                       $field   The field in this query which to join
-	 * @param \Library\Database\LinqSelect $select  The Select query to join to
-	 * @param string                       $foreign The key in the joined query to partner with
+	 * @param string                        $field   The field in this query which to join
+	 * @param Library::Database::LinqSelect $select  The Select query to join to
+	 * @param string                        $foreign The key in the joined query to partner with
 	 * 
-	 * @return \Library\Database\LinqSelect
+	 * @return Library::Database::LinqSelect
 	 */
 	function joinRight($field, $select, $foreign) {
 		if ($select instanceof \Library\Database\LinqSelect) {
@@ -272,7 +272,7 @@ class LinqSelect implements LinqQuery {
 	 * @param string $f  The field in the database to select
 	 * @param string $as The returned name of the field
 	 * 
-	 * @return \Library\Database\LinqSelect
+	 * @return Library::Database::LinqSelect
 	 */
 	function addField($f, $as=null) {
 		if ($f != "*") {
@@ -312,9 +312,9 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * Adds a string of filters to the select
 	 * 
-	 * @param \Library\Database\LinqEquality $f The filter to add
+	 * @param Library::Database::LinqEquality $f The filter to add
 	 * 
-	 * @return \Model\Database\LinqSelect
+	 * @return Model::Database::LinqSelect
 	 */
 	function setFilter($f) {
 		if (!is_subclass_of($f, "\Library\Database\LinqEquality")) {
@@ -332,7 +332,7 @@ class LinqSelect implements LinqQuery {
 	 * @param string $field The returning name of the field
 	 * @param string $name  Optional name of the column which to count unique values of
 	 * 
-	 * @return \Model\Database\LinqSelect
+	 * @return Model::Database::LinqSelect
 	 */
 	function addCount($field, $name="*") {
 		if ($name != "*") {
@@ -348,7 +348,7 @@ class LinqSelect implements LinqQuery {
 	 * @param int $start Starting position of the query
 	 * @param int $end   Length of the query
 	 * 
-	 * @return \Model\Database\LinqSelect
+	 * @return Model::Database::LinqSelect
 	 */
 	function setLimit($start, $end) {
 		if (!is_int($start) || !is_int($end)) {
@@ -366,7 +366,7 @@ class LinqSelect implements LinqQuery {
 	 * @param string $name Field or expression to group by
 	 * @param int    $raw  Whether the value should bypass escaping and cleansing
 	 * 
-	 * @return \Library\Database\LinqSelect
+	 * @return Library::Database::LinqSelect
 	 */
 	function setGroup($name, $raw=false) {
 		$this->group = array($name, $raw);
@@ -380,7 +380,7 @@ class LinqSelect implements LinqQuery {
 	 * @param string  $name Name of the field to order by
 	 * @param boolean $asc  Whether to sort Ascending or not
 	 * 
-	 * @return \Library\Database\LinqSelect
+	 * @return Library::Database::LinqSelect
 	 */
 	function setOrder($name, $asc=false) {
 		$this->order = $name;
@@ -395,9 +395,9 @@ class LinqSelect implements LinqQuery {
 	/**
 	 * (non-PHPdoc)
 	 * 
-	 * @see Library\Database.LinqQuery::Exec()
+	 * @see Library::Database::LinqQuery::Exec()
 	 */
-	function Exec() {
+	public function Exec() {
 		return $this->db->Exec($this->getSQL());
 	}
 }
